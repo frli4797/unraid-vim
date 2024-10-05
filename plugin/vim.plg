@@ -1,0 +1,78 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN>
+
+<PLUGIN
+  name="vim"
+  author="Brandon Zylstra"
+  version="2024.10.05"
+  pluginURL="https://raw.githubusercontent.com/brandondrew/unraid-vim/main/plugin/vim.plg"
+  support="https://forums.unraid.net/profile/280264-brazyl/"
+  icon="fa-pen-nib"
+>
+
+<CHANGES>
+<![CDATA[
+###2024.10.05###
+- Initial (experimental) release
+]]>
+</CHANGES>
+
+<FILE Name="/boot/config/plugins/vim/vim-9.0.2127-x86_64-1_slack15.0.txz" Run="upgradepkg --install-new">
+<URL>http://mirrors.slackware.com/slackware/slackware64-15.0/patches/packages/vim-9.0.2127-x86_64-1_slack15.0.txz</URL>
+<SHA256></SHA256>
+</FILE>
+
+<FILE Name="/usr/local/emhttp/plugins/vim/README.md">
+<INLINE>
+<![CDATA[
+**Vim for Unraid**
+
+You aren't limited to vi and nano anymore.  You're welcome.
+]]>
+</INLINE>
+</FILE>
+
+<FILE Name="/usr/local/emhttp/plugins/vim/vim.php">
+<INLINE>
+<![CDATA[
+<?php
+$plugin['name'] = 'vim';
+$plugin['title'] = 'Vim';
+$plugin['author'] = 'Brandon Zylstra';
+$plugin['version'] = '2024.10.05';
+$plugin['url'] = 'https://raw.githubusercontent.com/brandondrew/unraid-vim/main/plugin/vim.plg';
+$plugin['support'] = 'https://forums.unraid.net/profile/280264-brazyl/';
+$plugin['icon'] = 'fa-pen-nib';
+$plugin['color'] = '#000000';
+$plugin['category'] = 'Tools';
+$plugin['description'] = 'Vim for Unraid';
+$plugin['settings'] = [
+];
+?>
+]]>
+</INLINE>
+</FILE>
+
+<FILE Name="/usr/local/emhttp/plugins/vim/vim.css">
+<INLINE>
+<![CDATA[
+/* TODO: add some CSS */
+]]>
+]]>
+</INLINE>
+</FILE>
+
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+<![CDATA[
+removepkg sl
+
+# Remove possible leftovers
+rm -rf /usr/local/emhttp/plugins/vim;
+rm -rf /boot/config/plugins/vim;
+
+]]>
+</INLINE>
+</FILE>
+
+</PLUGIN>
