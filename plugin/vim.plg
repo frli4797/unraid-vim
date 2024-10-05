@@ -3,23 +3,29 @@
 
 <PLUGIN
   name="vim"
-  author="Brandon Zylstra"
-  version="2024.10.05"
+  author="Brandon"
+  version="2024.10.05.1"
   pluginURL="https://raw.githubusercontent.com/brandondrew/unraid-vim/main/plugin/vim.plg"
   support="https://forums.unraid.net/profile/280264-brazyl/"
-  icon="fa-pen-nib"
+  icon="pen-nib"
 >
 
 <CHANGES>
 <![CDATA[
-###2024.10.05###
+###2024.10.05.1###
 - Initial (experimental) release
+- Don't expect this to work yet.
 ]]>
 </CHANGES>
 
 <FILE Name="/boot/config/plugins/vim/vim-9.0.2127-x86_64-1_slack15.0.txz" Run="upgradepkg --install-new">
 <URL>http://mirrors.slackware.com/slackware/slackware64-15.0/patches/packages/vim-9.0.2127-x86_64-1_slack15.0.txz</URL>
 <SHA256>b88c295f046aafff8455a133d7c70eb9457256291eabf7691d6569f59323034f</SHA256>
+</FILE>
+
+<FILE Name="/boot/config/plugins/vim/libagentcrypt-1.0.6.tgz" Run="installpkg">
+<URL>https://github.com/ndilieto/libagentcrypt/archive/v1.0.6/libagentcrypt-1.0.6.tar.gz</URL>
+<SHA256>4787b35b125265dadaa4e11ce1e9f5d33a37ae6f9316f4a83f63e95af6e9c910</SHA256>
 </FILE>
 
 <FILE Name="/usr/local/emhttp/plugins/vim/README.md">
