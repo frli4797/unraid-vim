@@ -19,7 +19,7 @@
 
 <FILE Name="/boot/config/plugins/vim/vim-9.0.2127-x86_64-1_slack15.0.txz" Run="upgradepkg --install-new">
 <URL>http://mirrors.slackware.com/slackware/slackware64-15.0/patches/packages/vim-9.0.2127-x86_64-1_slack15.0.txz</URL>
-<SHA256></SHA256>
+<SHA256>b88c295f046aafff8455a133d7c70eb9457256291eabf7691d6569f59323034f</SHA256>
 </FILE>
 
 <FILE Name="/usr/local/emhttp/plugins/vim/README.md">
@@ -65,7 +65,7 @@ $plugin['settings'] = [
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
 <![CDATA[
-removepkg sl
+removepkg vim;
 
 # Remove possible leftovers
 rm -rf /usr/local/emhttp/plugins/vim;
